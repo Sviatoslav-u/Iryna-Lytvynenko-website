@@ -608,3 +608,73 @@ h2 {
 /* .quotes__item blockquote {
   white-space: pre-line;
 } */
+
+/* =========================================================
+   CONTACTS: 2 phone slots + 1 email slot
+   ========================================================= */
+.contacts {
+  background: var(--color-bg);
+  padding: 0 var(--pad-side);
+}
+
+.contacts__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--color-line);
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 2.75rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--color-line);
+  transition: background 0.3s ease;
+}
+
+.contacts__item:last-child {
+  border-right: none;
+}
+
+.contacts__item:hover {
+  background: var(--color-bg-alt);
+}
+
+.contacts__label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.contacts__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.contacts__value:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 720px) {
+  .contacts__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts__item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .contacts__item:last-child {
+    border-bottom: none;
+  }
+}
